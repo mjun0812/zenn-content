@@ -12,7 +12,6 @@ published_at: "2024-08-22 02:22"
 
 こんにちは。今回はPythonのパッケージマネージャのuvで、PyTorchのCPU/CUDAのバージョンをLinuxやmacOSなどの環境に応じて切り替えてインストールする方法を紹介します。
 
-
 :::message alert
 uv v0.4.23でindex-urlを複数指定してパッケージをインストールする方法が追加されました。
 以下の新しい記事で紹介しています。
@@ -22,17 +21,17 @@ uv v0.4.23でindex-urlを複数指定してパッケージをインストール�
 
 uv v0.4.23以降の新しい記事
 
-https://zenn.dev/mjun0812/articles/b32f870bb3cdbf
+<https://zenn.dev/mjun0812/articles/b32f870bb3cdbf>
 
 ## はじめに
 
 先日リリースされたuvのv0.30.0で、Ryeで実装されていたようなPython自体の管理もできるようになりました。
 
-https://astral.sh/blog/uv-unified-python-packaging
+<https://astral.sh/blog/uv-unified-python-packaging>
 
-https://nikkie-ftnext.hatenablog.com/entry/uv-0.3.0-release-awesome-future-python-project-package-manager
+<https://nikkie-ftnext.hatenablog.com/entry/uv-0.3.0-release-awesome-future-python-project-package-manager>
 
-https://zenn.dev/turing_motors/articles/594fbef42a36ee
+<https://zenn.dev/turing_motors/articles/594fbef42a36ee>
 
 コマンド体系はRyeとほぼ同じで、以下のような感じで好きなバージョンのPython環境を構築することができます。
 
@@ -46,11 +45,11 @@ poetryではMulti Platformを考慮した依存関係解決とパッケージイ
 
 この機能追加でpoetryやRyeで管理していたプロジェクトを移行しようと思い、PyTorchのインストール方法を試行錯誤していました。
 
-https://zenn.dev/mjun0812/scraps/671db64dc42ffa
+<https://zenn.dev/mjun0812/scraps/671db64dc42ffa>
 
 そこで、poetryのenvironment markerと同じような方法で、環境によってインストールするPyTorchを切り替える方法を発見したので共有します。
 
-https://zenn.dev/nakakiiro/articles/3cc5f4080a7a09
+<https://zenn.dev/nakakiiro/articles/3cc5f4080a7a09>
 
 ## 成果物
 
@@ -92,7 +91,7 @@ find-links = [
 
 uvでは[PEP508](https://peps.python.org/pep-0508/)に基づいたパッケージの依存関係の記述が可能です。
 
-https://docs.astral.sh/uv/concepts/dependencies/#pep-508
+<https://docs.astral.sh/uv/concepts/dependencies/#pep-508>
 
 この記述方法の中にEnvironment Markerという機能があり、システムの環境ごとに依存関係を記述することができます。
 上記のpyproject.tomlの該当箇所は以下です。
@@ -103,17 +102,18 @@ https://docs.astral.sh/uv/concepts/dependencies/#pep-508
 ```
 
 この記述では、
+
 - Linux + x86_64アーキテクチャの時はCUDA 11.8対応のPyTorch
 - macOS + arm64(Apple Silicon Mac)とLinux + aarch64の時はcpu版のPyTorch
 がインストールされます。
 
 また、PyTorchのバージョン表記`2.4.0+cu118`の`+cu118`の部分はLocal Versionと呼ばれており、uvでLocal Versionを使う時はパッケージのバージョン指定に`==`しか使えないことに注意して下さい。(`>=`は使えない)
 
-https://docs.astral.sh/uv/pip/compatibility/#local-version-identifiers
+<https://docs.astral.sh/uv/pip/compatibility/#local-version-identifiers>
 
 そして、以下でも言及されていますが、macOSでtorchをインストールする場合は`torch==2.4.0+cpu`ではなく、`torch==2.4.0`と記述しないとインストールできません。
 これは今後改善されるかもしれないです。
 
-https://github.com/astral-sh/uv/issues/5182
+<https://github.com/astral-sh/uv/issues/5182>
 
 以上、uvでのPyTorchのインストール方法の紹介でした。uvはPythonの管理機能が追加されて、隙が無くなった印象です。今後注目していきたいと思います。

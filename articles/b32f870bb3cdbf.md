@@ -14,11 +14,11 @@ published_at: "2024-10-22 02:08"
 
 前回の記事
 
-https://zenn.dev/mjun0812/articles/b22adf3fab1fdd
+<https://zenn.dev/mjun0812/articles/b22adf3fab1fdd>
 
 uv v0.4.23のアップデートで、1つのパッケージについて複数のindex-urlを指定する機能が追加されました。
 
-https://github.com/astral-sh/uv/releases/tag/0.4.23
+<https://github.com/astral-sh/uv/releases/tag/0.4.23>
 
 この機能を使うと、環境/パッケージごとに参照するindex-urlを変更できるため、より確実にPyTorchのインストールが行えます。  
 
