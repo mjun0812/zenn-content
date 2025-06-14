@@ -1,0 +1,25 @@
+{
+	"name": "Node.js",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		8080
+	],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "npm install",
+	"postStartCommand": "npm run preview",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"markdownlint.config": {
+					"MD034": false
+				}
+			},
+			"extensions": [
+				"DavidAnson.vscode-markdownlint",
+				"yzhang.markdown-all-in-one"
+			]
+		}
+	}
+}

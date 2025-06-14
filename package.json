@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preview": "npx zenn preview",
+    "create": "npx zenn new:article --slug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
