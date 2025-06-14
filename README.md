@@ -15,5 +15,5 @@ Zenn CLI
 npm run preview
 
 # create article
-npm run create -- my-article-slug
+npm run create
 ```
