@@ -481,9 +481,10 @@ rustfs:
   # Nginx Proxyの設定を追記
   expose:
     - "9001"
-  # 待ち受けドメインの指定
-  VIRTUAL_HOST: "example.com,localhost"
   environment:
+    # 待ち受けドメインの指定
+    - VIRTUAL_HOST=example.com,localhost
+
     - RUSTFS_VOLUMES=/data/rustfs
     - RUSTFS_ADDRESS=0.0.0.0:9000
     - RUSTFS_EXTERNAL_ADDRESS=:9000
