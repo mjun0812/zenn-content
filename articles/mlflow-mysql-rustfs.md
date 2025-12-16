@@ -8,7 +8,7 @@ topics:
   - "mysql"
   - "rustfs"
   - "dockercompose"
-published: false
+published: true
 ---
 
 :::message
