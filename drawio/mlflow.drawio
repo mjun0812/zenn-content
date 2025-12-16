@@ -1,0 +1,62 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram name="Simple MLflow Architecture V2" id="simple-arch-diagram-v2">
+    <mxGraphModel dx="1188" dy="758" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x39nlxVeF97IvCw9tUVK-1" value="&lt;font style=&quot;color: rgb(51, 153, 255);&quot;&gt;Host Network&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=10;fillColor=none;strokeColor=light-dark(#66B2FF,#6D5100);strokeWidth=2;dashed=1;verticalAlign=top;align=right;spacingTop=5;spacingRight=10;fontColor=#999900;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="190" y="120" width="470" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="net-internal" value="Internal Network" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=10;fillColor=none;strokeColor=#d6b656;strokeWidth=2;dashed=1;verticalAlign=top;align=right;spacingTop=5;spacingRight=10;fontColor=#999900;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="210" y="150" width="440" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="nginx" value="nginx-proxy&lt;br&gt;(Port 15000)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=2;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="130" y="190" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-note" value="Basic Auth" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d79b00;size=15;fontSize=11;align=center;" parent="1" vertex="1">
+          <mxGeometry x="110" y="170" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="auth-link" style="endArrow=none;html=1;entryX=0;entryY=0;entryDx=15;entryDy=15;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;strokeColor=#d79b00;" parent="1" source="auth-note" target="nginx" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mlflow" value="MLflow" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;fontColor=#000000;strokeColor=#6c8ebf;strokeWidth=2;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="400" y="190" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="db" value="MySQL&lt;br&gt;(Backend)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontColor=#000000;strokeColor=#d6b656;strokeWidth=2;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="320" y="350" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rustfs" value="RustFS&lt;br&gt;(Artifacts)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;fontColor=#000000;strokeColor=#82b366;strokeWidth=2;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="500" y="350" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;endArrow=classic;endFill=1;labelBackgroundColor=none;fontColor=#666666;fontSize=11;" parent="1" source="nginx" target="mlflow" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;endArrow=none;endFill=0;" parent="1" source="mlflow" target="db" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="310" />
+              <mxPoint x="390" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;endArrow=none;endFill=0;" parent="1" source="mlflow" target="rustfs" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="310" />
+              <mxPoint x="570" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x39nlxVeF97IvCw9tUVK-3" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="x39nlxVeF97IvCw9tUVK-2" target="nginx">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="230" as="sourcePoint" />
+            <mxPoint x="40" y="185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x39nlxVeF97IvCw9tUVK-2" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="185" width="45" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
