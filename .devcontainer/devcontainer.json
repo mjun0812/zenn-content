@@ -1,13 +1,13 @@
 {
 	"name": "Node.js",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		8080
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install",
-	"postStartCommand": "npm run preview",
+	"postCreateCommand": "pnpm install",
+	"postStartCommand": "pnpm preview",
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
