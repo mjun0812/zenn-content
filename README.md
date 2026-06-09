@@ -6,14 +6,14 @@ https://zenn.dev/mjun0812
 
 Zenn CLI
 
-* [📘 How to use](https://zenn.dev/zenn/articles/zenn-cli-guide)
+- [📘 How to use](https://zenn.dev/zenn/articles/zenn-cli-guide)
 
 ## Usage
 
 ```bash
 # preview
-npm run preview
+pnpm preview
 
 # create article
-npx zenn new:article --slug <slug>
+pnpm run create --slug <slug>
 ```

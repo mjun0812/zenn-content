@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "packageManager": "pnpm@11.5.2",
+  "engines": {
+    "node": ">=24.16.0"
+  },
   "scripts": {
-    "preview": "npx zenn preview",
-    "create": "npx zenn new:article",
+    "preview": "zenn preview",
+    "create": "zenn new:article",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +25,6 @@
   },
   "homepage": "https://github.com/mjun0812/zenn-content#readme",
   "dependencies": {
-    "zenn-cli": "^0.2.10"
+    "zenn-cli": "^0.4.8"
   }
 }
