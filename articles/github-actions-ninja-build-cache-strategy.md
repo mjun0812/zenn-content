@@ -37,6 +37,11 @@ https://x.com/mjun0812/status/1850706663982137615?s=20
 
 ## 課題
 
+多くの人がflash-attentionのビルド時間に苦しんでいるライブラリなので、
+それをGitHub Actionsでビルドすることも非常に時間がかかります。
+
+
+
 1. 6h cap で cancel された「キャッシュなし時代」の失敗例
 
 Run 26828098662 (PR #114, ARM64 FA2 GitHub-hosted, 2026-05-02)
